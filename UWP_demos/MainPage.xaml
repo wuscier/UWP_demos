@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="UWP_demos.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_demos"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="1">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <RelativePanel></RelativePanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <ListBoxItem x:Name="lbi1" RelativePanel.AlignTopWithPanel="True">1111111111111</ListBoxItem>
+
+
+            <ListBoxItem x:Name="lbi2" RelativePanel.Below="lbi1">22222222222222</ListBoxItem>
+            <ListBoxItem  RelativePanel.Below="lbi2">333333333333333</ListBoxItem>
+
+            <ListBoxItem RelativePanel.AlignBottomWithPanel="True">44444444444444</ListBoxItem>
+            <!--<ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>-->
+        </ListBox>
+
+
+        <RelativePanel Width="200" HorizontalAlignment="Left">
+            <Button x:Name="btn1" RelativePanel.AlignTopWithPanel="True">111111111111</Button>
+            <Button x:Name="btn2" RelativePanel.Below="btn1">222222222222</Button>
+            <Button RelativePanel.Below="btn2">333333333333</Button>
+            <Button RelativePanel.AlignBottomWithPanel="True">444444444444</Button>
+        </RelativePanel>
+    </Grid>
+</Page>
